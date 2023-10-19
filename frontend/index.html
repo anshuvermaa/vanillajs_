@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single Page App</title>
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <style>
+      .nav-tabs {
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        
+        
+        
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        width: 0;
+        height: 3px;
+        background-color: #2a70ef;
+        transition: width 0.3s;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        width: 0;
+        height: 3px;
+        background-color: #ff0000;
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #2a70ef;
+      }
+
+      .nav-link:hover::before {
+        width: 100%;
+      }
+
+      .nav-link.active::before {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <div class="w-full h-[70px] shadow-md"></div>
+
+      <!-- nav  -->
+
+      <div class="lg:px-[270px] md:px-[150px] sm:px-[70px] px-[38px]">
+        <!-- middle bar -->
+
+        <div
+          class="sm:inline-flex grid gap-7 sm:gap-15 sm:max-w-[600px] w-full sm:justify-between align-items-center py-9"
+        >
+          <div
+            class="flex justify-center my-auto font-bold text-[#212121] font-sans not-italic text-4xl leading-[51px]"
+          >
+            Mis colegios
+          </div>
+          <div class="nav-tabs flex text-lg leading-5 text-[#212121]">
+            <a href="/" class="text-black nav-link py-3 px-4" data-link
+              >Solicitudes</a
+            >
+            <a
+              href="/favoritos"
+              class="text-black nav-link active py-3 px-4"
+              data-link
+              >Favoritos</a
+            >
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <div id="app" class="">
+
+        </div>
+      </div>
+
+      <div class="w-full h-2 bg-black my-10"></div>
+
+      <!--Sección "Mis búsquedas  -->
+
+      <div
+        class="md:flex lg:py-16 lg:pr-28 lg:pl-36 lg:gap-[46px] md:py-11 md:px-16 md:gap-[46px] align-items-start px-7 pt-8 pb-11 gap-7"
+      >
+        <div class="min-w-[240px] w-full max-w-[377px] gap-[34px]">
+          <div class="font-semibold leading-5 text-[20px]">
+            Mis búsquedas guardadas
+          </div>
+          <div class="w-full py-8">
+            <button
+              class="h-[62px] w-full font-semibold text-white rounded-full text-[16px] bg-gradient-to-r from-[#21F7FD] to-[#2982FC] font-sans"
+            >
+              Hacer nueva búsqueda
+            </button>
+          </div>
+        </div>
+
+        <!-- this is card -->
+        <div class="grid sm:gap-9 gap-4">
+          <!-- 1st -->
+          <div
+            class="rounded-xl shadow-xl w-full p-4 lg:py-7 lg:px-10 sm:py-5 sm:px-8 my-auto place-items-start border-2 border-[#EEEEEE] grid gap-6 bg-[#FFFFFF]"
+          >
+            <div class="md:flex justify-between w-full gap-3">
+              <div class="inline-block grid-cols gap-[6px]">
+                <span
+                  class="leading-[21px] text-[16px] font-semibold text-[#6F7279] font-sans"
+                  >Búsqueda en Enero</span
+                >
+                <span
+                  class="leading-[13px] text-[10px] font-normal text-[#6F7279]/[0.76] font-sans"
+                  >22/01/2023</span
+                >
+                <span
+                  class="bg-[#2A70EF1A]/[0.10] rounded-full px-[10px] py-[6px] font-normal leading-[13px] text-[10px] font-sans text-[#2A70EF] inline-block"
+                  >20 CENTROS</span
+                >
+              </div>
+              <div class="flex my-2 sm:my-0 ms:my-0 gap-1">
+                <span>
+                  <svg
+                    width="23"
+                    height="24"
+                    viewBox="0 0 23 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      y="0.5"
+                      width="23"
+                      height="23"
+                      rx="4"
+                      fill="#F4F4F4"
+                    />
+                    <g clip-path="url(#clip0_485_12275)">
+                      <path
+                        d="M7.66667 9.16669H7.00001C6.64638 9.16669 6.30724 9.30716 6.0572 9.55721C5.80715 9.80726 5.66667 10.1464 5.66667 10.5V16.5C5.66667 16.8536 5.80715 17.1928 6.0572 17.4428C6.30724 17.6929 6.64638 17.8334 7.00001 17.8334H13C13.3536 17.8334 13.6928 17.6929 13.9428 17.4428C14.1929 17.1928 14.3333 16.8536 14.3333 16.5V15.8334"
+                        stroke="#9A9EA7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.59 8.89001C16.8526 8.62745 17.0001 8.27133 17.0001 7.90001C17.0001 7.52869 16.8526 7.17257 16.59 6.91001C16.3274 6.64745 15.9713 6.49994 15.6 6.49994C15.2287 6.49994 14.8726 6.64745 14.61 6.91001L9 12.5V14.5H11L16.59 8.89001Z"
+                        stroke="#9A9EA7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M13.6667 7.83331L15.6667 9.83331"
+                        stroke="#9A9EA7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_485_12275">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(3 4.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <span>
+                  <svg
+                    width="23"
+                    height="24"
+                    viewBox="0 0 23 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      y="0.5"
+                      width="23"
+                      height="23"
+                      rx="4"
+                      fill="#F4F4F4"
+                    />
+                    <g clip-path="url(#clip0_734_3427)">
+                      <path
+                        d="M11.6667 6.66669V9.33335C7.28334 10.0187 5.65334 13.8587 5 17.3334C4.97534 17.4707 8.58934 13.3587 11.6667 13.3334V16L17 11.3334L11.6667 6.66669Z"
+                        stroke="#9A9EA7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_734_3427">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(3 4)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <span>
+                  <svg
+                    width="23"
+                    height="24"
+                    viewBox="0 0 23 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      y="0.5"
+                      width="23"
+                      height="23"
+                      rx="4"
+                      fill="#F4F4F4"
+                    />
+                    <g clip-path="url(#clip0_485_12276)">
+                      <path
+                        d="M5.66667 9.16669H16.3333"
+                        stroke="#FF7673"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9.66667 11.8333V15.8333"
+                        stroke="#FF7673"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.3333 11.8333V15.8333"
+                        stroke="#FF7673"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6.33333 9.16669L6.99999 17.1667C6.99999 17.5203 7.14047 17.8594 7.39052 18.1095C7.64057 18.3595 7.97971 18.5 8.33333 18.5H13.6667C14.0203 18.5 14.3594 18.3595 14.6095 18.1095C14.8595 17.8594 15 17.5203 15 17.1667L15.6667 9.16669"
+                        stroke="#FF7673"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9 9.16667V7.16667C9 6.98986 9.07024 6.82029 9.19526 6.69526C9.32029 6.57024 9.48986 6.5 9.66667 6.5H12.3333C12.5101 6.5 12.6797 6.57024 12.8047 6.69526C12.9298 6.82029 13 6.98986 13 7.16667V9.16667"
+                        stroke="#FF7673"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_485_12276">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(3 4.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div>
+              <span
+                class="leading-[17.5px] font-normal font-sans text-[12px] text-[#212121CC]/[0.80]"
+              >
+                Guardería; Guardería; Gratuito o Laic; Atención a la diversidad;
+                Ed. Infantil 1er ciclo (0-3 años); Ed. Infantil 1er ciclo (0-3
+                años); Español; Horario ampliado; AMPA.
+              </span>
+            </div>
+          </div>
+          <!-- 2st -->
+          <div
+          class="rounded-xl shadow-xl w-full p-4 lg:py-7 lg:px-10 sm:py-5 sm:px-8 my-auto place-items-start border-2 border-[#EEEEEE] grid gap-6 bg-[#FFFFFF]"
+        >
+          <div class="md:flex justify-between w-full gap-3">
+            <div class="inline-block grid-cols gap-[6px]">
+              <span
+                class="leading-[21px] text-[16px] font-semibold text-[#6F7279] font-sans"
+                >Búsqueda en Enero</span
+              >
+              <span
+                class="leading-[13px] text-[10px] font-normal text-[#6F7279]/[0.76] font-sans"
+                >22/01/2023</span
+              >
+              <span
+                class="bg-[#2A70EF1A]/[0.10] rounded-full px-[10px] py-[6px] font-normal leading-[13px] text-[10px] font-sans text-[#2A70EF] inline-block"
+                >20 CENTROS</span
+              >
+            </div>
+            <div class="flex my-2 sm:my-0 ms:my-0 gap-1">
+              <span>
+                <svg
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="0.5"
+                    width="23"
+                    height="23"
+                    rx="4"
+                    fill="#F4F4F4"
+                  />
+                  <g clip-path="url(#clip0_485_12275)">
+                    <path
+                      d="M7.66667 9.16669H7.00001C6.64638 9.16669 6.30724 9.30716 6.0572 9.55721C5.80715 9.80726 5.66667 10.1464 5.66667 10.5V16.5C5.66667 16.8536 5.80715 17.1928 6.0572 17.4428C6.30724 17.6929 6.64638 17.8334 7.00001 17.8334H13C13.3536 17.8334 13.6928 17.6929 13.9428 17.4428C14.1929 17.1928 14.3333 16.8536 14.3333 16.5V15.8334"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.59 8.89001C16.8526 8.62745 17.0001 8.27133 17.0001 7.90001C17.0001 7.52869 16.8526 7.17257 16.59 6.91001C16.3274 6.64745 15.9713 6.49994 15.6 6.49994C15.2287 6.49994 14.8726 6.64745 14.61 6.91001L9 12.5V14.5H11L16.59 8.89001Z"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.6667 7.83331L15.6667 9.83331"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_485_12275">
+                      <rect
+                        width="16"
+                        height="16"
+                        fill="white"
+                        transform="translate(3 4.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <span>
+                <svg
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="0.5"
+                    width="23"
+                    height="23"
+                    rx="4"
+                    fill="#F4F4F4"
+                  />
+                  <g clip-path="url(#clip0_734_3427)">
+                    <path
+                      d="M11.6667 6.66669V9.33335C7.28334 10.0187 5.65334 13.8587 5 17.3334C4.97534 17.4707 8.58934 13.3587 11.6667 13.3334V16L17 11.3334L11.6667 6.66669Z"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_734_3427">
+                      <rect
+                        width="16"
+                        height="16"
+                        fill="white"
+                        transform="translate(3 4)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <span>
+                <svg
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="0.5"
+                    width="23"
+                    height="23"
+                    rx="4"
+                    fill="#F4F4F4"
+                  />
+                  <g clip-path="url(#clip0_485_12276)">
+                    <path
+                      d="M5.66667 9.16669H16.3333"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9.66667 11.8333V15.8333"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.3333 11.8333V15.8333"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.33333 9.16669L6.99999 17.1667C6.99999 17.5203 7.14047 17.8594 7.39052 18.1095C7.64057 18.3595 7.97971 18.5 8.33333 18.5H13.6667C14.0203 18.5 14.3594 18.3595 14.6095 18.1095C14.8595 17.8594 15 17.5203 15 17.1667L15.6667 9.16669"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 9.16667V7.16667C9 6.98986 9.07024 6.82029 9.19526 6.69526C9.32029 6.57024 9.48986 6.5 9.66667 6.5H12.3333C12.5101 6.5 12.6797 6.57024 12.8047 6.69526C12.9298 6.82029 13 6.98986 13 7.16667V9.16667"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_485_12276">
+                      <rect
+                        width="16"
+                        height="16"
+                        fill="white"
+                        transform="translate(3 4.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div>
+            <span
+              class="leading-[17.5px] font-normal font-sans text-[12px] text-[#212121CC]/[0.80]"
+            >
+              Guardería; Guardería; Gratuito o Laic; Atención a la diversidad;
+              Ed. Infantil 1er ciclo (0-3 años); Ed. Infantil 1er ciclo (0-3
+              años); Español; Horario ampliado; AMPA.
+            </span>
+          </div>
+        </div>
+         
+          <!-- 3st -->
+          <div
+          class="rounded-xl shadow-xl w-full p-4 lg:py-7 lg:px-10 sm:py-5 sm:px-8 my-auto place-items-start border-2 border-[#EEEEEE] grid gap-6 bg-[#FFFFFF]"
+        >
+          <div class="md:flex justify-between w-full gap-3">
+            <div class="inline-block grid-cols gap-[6px]">
+              <span
+                class="leading-[21px] text-[16px] font-semibold text-[#6F7279] font-sans"
+                >Búsqueda en Enero</span
+              >
+              <span
+                class="leading-[13px] text-[10px] font-normal text-[#6F7279]/[0.76] font-sans"
+                >22/01/2023</span
+              >
+              <span
+                class="bg-[#2A70EF1A]/[0.10] rounded-full px-[10px] py-[6px] font-normal leading-[13px] text-[10px] font-sans text-[#2A70EF] inline-block"
+                >20 CENTROS</span
+              >
+            </div>
+            <div class="flex my-2 sm:my-0 ms:my-0 gap-1">
+              <span>
+                <svg
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="0.5"
+                    width="23"
+                    height="23"
+                    rx="4"
+                    fill="#F4F4F4"
+                  />
+                  <g clip-path="url(#clip0_485_12275)">
+                    <path
+                      d="M7.66667 9.16669H7.00001C6.64638 9.16669 6.30724 9.30716 6.0572 9.55721C5.80715 9.80726 5.66667 10.1464 5.66667 10.5V16.5C5.66667 16.8536 5.80715 17.1928 6.0572 17.4428C6.30724 17.6929 6.64638 17.8334 7.00001 17.8334H13C13.3536 17.8334 13.6928 17.6929 13.9428 17.4428C14.1929 17.1928 14.3333 16.8536 14.3333 16.5V15.8334"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.59 8.89001C16.8526 8.62745 17.0001 8.27133 17.0001 7.90001C17.0001 7.52869 16.8526 7.17257 16.59 6.91001C16.3274 6.64745 15.9713 6.49994 15.6 6.49994C15.2287 6.49994 14.8726 6.64745 14.61 6.91001L9 12.5V14.5H11L16.59 8.89001Z"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.6667 7.83331L15.6667 9.83331"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_485_12275">
+                      <rect
+                        width="16"
+                        height="16"
+                        fill="white"
+                        transform="translate(3 4.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <span>
+                <svg
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="0.5"
+                    width="23"
+                    height="23"
+                    rx="4"
+                    fill="#F4F4F4"
+                  />
+                  <g clip-path="url(#clip0_734_3427)">
+                    <path
+                      d="M11.6667 6.66669V9.33335C7.28334 10.0187 5.65334 13.8587 5 17.3334C4.97534 17.4707 8.58934 13.3587 11.6667 13.3334V16L17 11.3334L11.6667 6.66669Z"
+                      stroke="#9A9EA7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_734_3427">
+                      <rect
+                        width="16"
+                        height="16"
+                        fill="white"
+                        transform="translate(3 4)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <span>
+                <svg
+                  width="23"
+                  height="24"
+                  viewBox="0 0 23 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    y="0.5"
+                    width="23"
+                    height="23"
+                    rx="4"
+                    fill="#F4F4F4"
+                  />
+                  <g clip-path="url(#clip0_485_12276)">
+                    <path
+                      d="M5.66667 9.16669H16.3333"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9.66667 11.8333V15.8333"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.3333 11.8333V15.8333"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.33333 9.16669L6.99999 17.1667C6.99999 17.5203 7.14047 17.8594 7.39052 18.1095C7.64057 18.3595 7.97971 18.5 8.33333 18.5H13.6667C14.0203 18.5 14.3594 18.3595 14.6095 18.1095C14.8595 17.8594 15 17.5203 15 17.1667L15.6667 9.16669"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 9.16667V7.16667C9 6.98986 9.07024 6.82029 9.19526 6.69526C9.32029 6.57024 9.48986 6.5 9.66667 6.5H12.3333C12.5101 6.5 12.6797 6.57024 12.8047 6.69526C12.9298 6.82029 13 6.98986 13 7.16667V9.16667"
+                      stroke="#FF7673"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_485_12276">
+                      <rect
+                        width="16"
+                        height="16"
+                        fill="white"
+                        transform="translate(3 4.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div>
+            <span
+              class="leading-[17.5px] font-normal font-sans text-[12px] text-[#212121CC]/[0.80]"
+            >
+              Guardería; Guardería; Gratuito o Laic; Atención a la diversidad;
+              Ed. Infantil 1er ciclo (0-3 años); Ed. Infantil 1er ciclo (0-3
+              años); Español; Horario ampliado; AMPA.
+            </span>
+          </div>
+        </div>
+         
+        </div>
+      </div>
+
+      <!-- this is for just  demo-->
+
+      <div
+        class="flex h-[100px] border-[2px] border-[#EEEEEE] shadow-lg justify-center justify-items-center"
+      >
+        <span class="my-auto">Footer</span>
+      </div>
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll(".nav-link");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+        });
+      });
+    </script>
+    <script type="module" src="/static/js/index.js"></script>
+  </body>
+</html>
